@@ -1,5 +1,5 @@
 .itemBox{
-    width: 150px;
+    width: 200px;
     padding: 10px;
     display: inline-block;
     border: 1px solid black;
@@ -9,5 +9,6 @@
 }
 
 .galleryImage{
-    width: 100px;
+    width: 150px;
+    padding: 5px;
 }
