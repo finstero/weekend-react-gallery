@@ -2,13 +2,25 @@
     width: 200px;
     padding: 10px;
     display: inline-block;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
     vertical-align: center;
-    margin: 10px 10px 10px 0;
+    margin: 10px 10px 10px 10px;
+}
+
+.imgBox{
+    width: 200px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.description{
+
 }
 
 .galleryImage{
-    width: 150px;
-    padding: 5px;
+    object-fit: cover;
+    /* padding: 5px; */
 }

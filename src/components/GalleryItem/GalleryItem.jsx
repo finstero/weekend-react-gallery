@@ -26,18 +26,16 @@ function GalleryItem(props) {
     console.log('logging is hidden', isHidden);
     return (
         <>
-            <div className="itemBox">
-                {isHidden ? (<div>
-                    <p onClick={handleImageClick}>{props.picture.description}</p>
-
+            <div className="itemBox row">
+                <div className="imgBox">
+                    {isHidden ? (
+                        <div onClick={handleImageClick} className="description" width="150" height="150">{props.picture.description}</div>
+                    ) : (
+                            <img onClick={handleImageClick} className="galleryImage" src={props.picture.path} width="150" height="150"/>
+                    )}
                 </div>
-                ) : (
-                    <div>
-                        <img onClick={handleImageClick} className="galleryImage" src={props.picture.path} />
-                    </div>
-                )}
-                <button onClick={handleLike} className="btn btn-dark btn-sm">Like</button>
-                <p>Number of likes: {props.picture.likes}</p>
+                    <button onClick={handleLike} className="btn btn-dark btn-sm">Like</button>
+                    <p>Number of likes: {props.picture.likes}</p>
             </div>
         </>
     )

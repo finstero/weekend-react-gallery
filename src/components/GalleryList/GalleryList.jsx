@@ -7,7 +7,7 @@ function GalleryList (props) {
     return(
         <section>
             <h3>In GalleryList</h3>
-            <div>
+            <div className="container">
                 {props.galleryList.map(picture => (
                     <GalleryItem key={picture.id} picture={picture} getGallery={getGallery}  />
                 ))}
