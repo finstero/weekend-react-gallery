@@ -1,9 +1,12 @@
 
 
-function GalleryList () {
+function GalleryList (pictures) {
 
     return(
+        <section>
 
+
+        </section>
     )
 }
 

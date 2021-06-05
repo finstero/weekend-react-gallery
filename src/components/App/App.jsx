@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList';
+
 
 function App() {
+    const [galleryList, setGalleryList] = useState([]);
+
+
+
+    const getGallery = () => {
+      console.log(('in getGallery'));
+      axios.get('/gallery')
+      .then(response => {
+        console.log('logging response data in get', response.data);
+        setGalleryList(response.data);
+      }) // End .then
+      .catch(error => {
+        alert('error getting gallery');
+        console.log('error in get', error);
+      }); // End .catch
+    }
+
+
+    useEffect(() => {
+      getGallery();
+    }, []);
     return (
       <div className="App">
         <header className="App-header">
@@ -9,6 +34,7 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/>
+        <GalleryList galleryList={galleryList}/>
       </div>
     );
 }

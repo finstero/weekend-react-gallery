@@ -1,7 +1,12 @@
-function GalleryItem () {
+function GalleryItem (props) {
 
     return(
+        <>
+        <div>
 
+
+        </div>
+        </>
     )
 }
 
