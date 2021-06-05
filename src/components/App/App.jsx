@@ -16,17 +16,18 @@ function App() {
       .then(response => {
         console.log('logging response data in get', response.data);
         setGalleryList(response.data);
-      }) // End .then
+      })
       .catch(error => {
         alert('error getting gallery');
         console.log('error in get', error);
-      }); // End .catch
+      });
     }
 
 
     useEffect(() => {
       getGallery();
     }, []);
+    
     return (
       <div className="App">
         <header className="App-header">
