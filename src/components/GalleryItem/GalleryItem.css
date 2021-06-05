@@ -1,0 +1,13 @@
+.itemBox{
+    width: 150px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: center;
+    margin: 10px 10px 10px 0;
+}
+
+.galleryImage{
+    width: 100px;
+}

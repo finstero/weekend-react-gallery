@@ -10,7 +10,6 @@ function GalleryList (pictures) {
                     <GalleryItem key={picture.id} picture={picture} />
                 ))}
             </div>
-            <button className="btn btn-dark">Like</button>
         </section>
     )
 }
