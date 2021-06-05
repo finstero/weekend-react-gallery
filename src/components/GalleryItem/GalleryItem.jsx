@@ -1,11 +1,22 @@
-import Axios from 'axios';
+import axios from 'axios';
 import './GalleryItem.css';
 
 function GalleryItem (props) {
     // console.log('logging props.picture.path in GalleryItem', props.picture.path);
     console.log('in galleryitem, logging getGallery', props.getGallery);
     const handleLike = () => {
-        Axios.put('/gallery/like/:id', )
+        // console.log(props.picture);
+        // const data = {
+
+        // }
+        axios.put(`/gallery/like/${props.picture.id}`)
+        .then( response => {
+            console.log('response in put', response);
+            props.getGallery();
+        })
+        .catch(error => {
+            console.log('error in put', error);
+        })
     }
 
     return(
