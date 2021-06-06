@@ -9,12 +9,24 @@ const galleryItems = require('../modules/gallery.data');
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
-    for(const galleryItem of galleryItems) {
-        if(galleryItem.id == galleryId) {
-            galleryItem.likes += 1;
-        }
-    }
-    res.sendStatus(200);
+    const queryString = 'UPDATE "gallery" SET "likes"=likes+1 WHERE "gallery".id = $1;';
+
+    pool.query(queryString, [galleryId])
+    .then (response => {
+      console.log(response.rowCount);
+      res.sendStatus(202);
+    }).catch (error => {
+      console.log('error in put', error);
+      res.sendStatus(500);
+    })
+
+
+    // for(const galleryItem of galleryItems) {
+    //     if(galleryItem.id == galleryId) {
+    //         galleryItem.likes += 1;
+    //     }
+    // }
+    // res.sendStatus(200);
 }); // END PUT Route
 
 // GET Route
