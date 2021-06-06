@@ -6,7 +6,7 @@ function GalleryList (props) {
     const getGallery = props.getGallery;
     return(
         <section>
-            <h3>In GalleryList</h3>
+            <h3>Cats, etc.</h3>
             <div className="container">
                 {props.galleryList.map(picture => (
                     <GalleryItem key={picture.id} picture={picture} getGallery={getGallery}  />
