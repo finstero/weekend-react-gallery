@@ -8,6 +8,7 @@ function GalleryItem(props) {
 
     const [isHidden, setIsHidden] = useState(false);
 
+    // increases like votes by one on click of like button.
     const handleLike = () => {
         // console.log(props.picture);
         axios.put(`/gallery/like/${props.picture.id}`)

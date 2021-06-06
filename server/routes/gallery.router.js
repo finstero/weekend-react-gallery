@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
-// PUT Route
+// PUT Route. Adds 1 like for each click of like button.
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
@@ -21,7 +21,7 @@ router.put('/like/:id', (req, res) => {
 
 }); // END PUT Route
 
-// DELETE Route
+// DELETE Route. Deletes entire gallery card on delete button click.
 router.delete('/delete/:id', (req, res) => {
     const deletePic = req.params.id;
     const queryString = `DELETE FROM "gallery" WHERE "gallery".id = $1;`
@@ -35,7 +35,7 @@ router.delete('/delete/:id', (req, res) => {
       console.log('error in delete', error);
       res.sendStatus(500);
     });
-})
+}) // END DELETE
 
 // GET Route
 router.get('/', (req, res) => {
