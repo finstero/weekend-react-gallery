@@ -4,11 +4,11 @@ function GalleryForm () {
     return (
         <div>
             <form>
-                <label></label>
+                <label htmlFor="urlInput">Image URL</label>
                 <input id="urlInput" placeholder="image url" />
-                <label></label>
+                <label htmlFor="descriptionInput">Image Description</label>
                 <input id="descriptionInput" placeholder="description" />
-                <button className="btn btn-dark btn-sm">Display</button>
+                <button className="btn btn-dark btn-sm" type="submit" >Display</button>
             </form>
         </div>
     )
