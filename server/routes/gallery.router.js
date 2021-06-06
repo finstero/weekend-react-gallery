@@ -21,6 +21,22 @@ router.put('/like/:id', (req, res) => {
 
 }); // END PUT Route
 
+// DELETE Route
+router.delete('/delete/:id', (req, res) => {
+    const deletePic = req.params.id;
+    const queryString = `DELETE FROM "gallery" WHERE "gallery".id = $1;`
+  
+    pool.query(queryString, [deletePic])
+    .then( response => {
+      console.log(`deleted gallery card with id ${deletePic}`);
+      res.sendStatus(200);
+    })
+    .catch( error => {
+      console.log('error in delete', error);
+      res.sendStatus(500);
+    });
+})
+
 // GET Route
 router.get('/', (req, res) => {
     let queryText = 'SELECT * FROM "gallery" ORDER BY "description";';

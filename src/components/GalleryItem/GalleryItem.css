@@ -20,6 +20,10 @@
 
 }
 
+.button{
+    margin-top: 5px;
+}
+
 .galleryImage{
     object-fit: cover;
     /* padding: 5px; */
