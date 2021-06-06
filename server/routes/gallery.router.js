@@ -19,7 +19,15 @@ router.put('/like/:id', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
-    res.send(galleryItems);
+    let queryText = 'SELECT * FROM "gallery";';
+    pool.query(queryText).then(result => {
+        res.send(result.rows);
+    })
+    .catch (error => {
+    console.log('error getting into gallery table', error);
+    res.sendStatus(500);
+    });
+    // res.send(galleryItems);
 }); // END GET Route
 
 module.exports = router;
