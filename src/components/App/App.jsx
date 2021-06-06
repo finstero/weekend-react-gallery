@@ -32,7 +32,7 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of Furry Demons</h1>
+          <h1 className="App-title">Furry Demons, etc.</h1>
         </header>
         <section>
           <GalleryForm getGallery={getGallery}/>
