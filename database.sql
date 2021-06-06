@@ -9,6 +9,7 @@ INSERT INTO "gallery"
 	("path", "description")
 VALUES
 ('https://i.imgur.com/80Wmgzq.jpg', 'Photo of Miso with her favorite sushi.'),
-('images/olivia-rappel.jpeg', 'Photo of me rappelling down a route at Taylors Falls.')
-('https://i.imgur.com/InKspO9.jpg', 'Photo of Toph looking as angry as usual.')
+('images/olivia-rappel.jpeg', 'Photo of me rappelling down a route at Taylors Falls.'),
+('https://i.imgur.com/InKspO9.jpg', 'Photo of Toph looking as angry as usual.'),
+('https://i.imgur.com/RJKyBEK.jpg', 'This does not look like a violen.')
 ;
