@@ -19,5 +19,5 @@ This app allows the user to add an image via a url and an image description. The
 User may "like" a photo, and the DOM displays the number of times the photo has been liked. Users can click on the photo to see a description of the photo. Clicking on the description toggles back to the photo. Clicking on the delete button will delete the entire image card.
 
 
-![screenshot](./screenshots/gallery-app.png "Hello")
+![screenshot](./screenshot/gallery-app.png "Hello")
 
