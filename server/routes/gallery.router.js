@@ -37,6 +37,22 @@ router.delete('/delete/:id', (req, res) => {
     });
 }) // END DELETE
 
+// POST Route
+router.post('/', (req, res) => {
+    let newPicture = req.body;
+
+    let queryText = `INSERT INTO "gallery" ("path", "description")
+                    VALUES ($1, $2);`;
+    pool.query(queryText, [newPicture.path, newPicture.description])
+      .then( result => {
+        res.sendStatus(201);
+      })
+      .catch( error => {
+        console.log(`Error adding new pic`, error);
+        res.sendStatus(500);
+      });
+});
+
 // GET Route
 router.get('/', (req, res) => {
     let queryText = 'SELECT * FROM "gallery" ORDER BY "description";';
