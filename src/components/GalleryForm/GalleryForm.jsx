@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './GalleryForm.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function GalleryForm (props) {
 
@@ -13,7 +14,7 @@ function GalleryForm (props) {
 
         // forces user to enter both url and description
         if (!picturePath || !pictureDescription){
-            alert('Please make sure to enter both a url and a picture description.')
+            swal('Please make sure to enter both a url and a picture description.');
         }
         else {
             axios.post('/gallery', {

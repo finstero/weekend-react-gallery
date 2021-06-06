@@ -24,14 +24,32 @@ function GalleryItem(props) {
     // delete picture card on click of delete button
     const handleDelete = () => {
         console.log('in delete');
-        axios.delete(`/gallery/delete/${props.picture.id}`)
-        .then( response => {
-            console.log('response in delete', response);
-            props.getGallery();
-        })
-        .catch(error => {
-            console.log('error in delete', error);
-        })
+
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this image!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Your image has been deleted!", {
+                icon: "success",
+              });
+              
+              axios.delete(`/gallery/delete/${props.picture.id}`)
+              .then( response => {
+                  console.log('response in delete', response);
+                  props.getGallery();
+              })
+              .catch(error => {
+                  console.log('error in delete', error);
+              })
+            } else {
+              swal("Your image is safe!");
+            }
+          });
     }
 
     // toggles image/description in picture card
@@ -46,7 +64,7 @@ function GalleryItem(props) {
                     {isHidden ? (
                         <div onClick={handleImageClick} className="description" width="150" height="150">{props.picture.description}</div>
                     ) : (
-                            <img onClick={handleImageClick} className="galleryImage" src={props.picture.path} width="150" height="150"/>
+                        <img onClick={handleImageClick} className="galleryImage" src={props.picture.path} width="150" height="150"/>
                     )}
                 </div>
                     <button onClick={handleLike} className="button btn btn-dark btn-sm">Like</button>
