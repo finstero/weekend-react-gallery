@@ -13,7 +13,7 @@ function GalleryItem(props) {
         // console.log(props.picture);
         axios.put(`/gallery/like/${props.picture.id}`)
             .then(response => {
-                console.log('response in put', response);
+                // console.log('response in put', response);
                 props.getGallery();
             })
             .catch(error => {
@@ -38,7 +38,7 @@ function GalleryItem(props) {
     const handleImageClick = () => {
         setIsHidden(!isHidden);
     }
-    console.log('logging is hidden', isHidden);
+    // console.log('logging is hidden', isHidden);
     return (
         <>
             <div className="itemBox row">
