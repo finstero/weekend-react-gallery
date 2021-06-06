@@ -10,18 +10,25 @@ function GalleryForm (props) {
 // adds new picture to db and DOM
     const addPicture = () => {
         console.log('logging picture');
-        axios.post('/gallery', {
-            path: picturePath,
-            description: pictureDescription
-        })
-        .then( response => {
-            props.getGallery();
-        })
-        .catch( error => {
-            console.log('error in post', error);
-        });
-        setPicturePath('');
-        setPictureDescription('');
+
+        // forces user to enter both url and description
+        if (!picturePath || !pictureDescription){
+            alert('Please make sure to enter both a url and a picture description.')
+        }
+        else {
+            axios.post('/gallery', {
+                path: picturePath,
+                description: pictureDescription
+            })
+            .then( response => {
+                props.getGallery();
+            })
+            .catch( error => {
+                console.log('error in post', error);
+            });
+            setPicturePath('');
+            setPictureDescription('');
+        }
     }
 
     const handleSubmit = (event) => {

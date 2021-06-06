@@ -2,7 +2,6 @@
     width: 200px;
     padding: 10px;
     display: inline-block;
-    /* border: 1px solid black; */
     text-align: center;
     vertical-align: center;
     margin: 10px 10px 10px 10px;
@@ -16,15 +15,10 @@
     border: 1px solid black;
 }
 
-.description{
-
-}
-
 .button{
     margin-top: 5px;
 }
 
 .galleryImage{
     object-fit: cover;
-    /* padding: 5px; */
 }
