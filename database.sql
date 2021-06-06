@@ -8,6 +8,7 @@ CREATE TABLE "gallery" (
 INSERT INTO "gallery" 
 	("path", "description")
 VALUES
-('images/miso-with-sushi.jpeg', 'Photo of Miso with her favorite sushi.'),
+('https://i.imgur.com/80Wmgzq.jpg', 'Photo of Miso with her favorite sushi.'),
 ('images/olivia-rappel.jpeg', 'Photo of me rappelling down a route at Taylors Falls.')
+('https://i.imgur.com/InKspO9.jpg', 'Photo of Toph looking as angry as usual.')
 ;
