@@ -48,7 +48,7 @@ function GalleryItem(props) {
                   console.log('error in delete', error);
               })
             } else {
-              swal("Your image is safe!");
+            //   swal("Your image is safe!");
             }
           });
     }
@@ -63,16 +63,18 @@ function GalleryItem(props) {
             <div className="itemBox row">
                 <div className="imgBox">
                     {isHidden ? (
-                        <div onClick={handleImageClick} className="description" width="150" height="150">{props.picture.description}</div>
+                        <div onClick={handleImageClick} className="description" width="200" height="200">{props.picture.description}</div>
                     ) : (
-                        <img onClick={handleImageClick} className="galleryImage" src={props.picture.path} width="150" height="150"/>
+                        <img onClick={handleImageClick} className="galleryImage" src={props.picture.path} width="200" height="200"/>
                     )}
                 </div>
-                    <Button onClick={handleLike} size="small" className="button">Like</Button>
+                <div className="button-div">
+                    <Button onClick={handleLike} size="small" className="item-info button">Like</Button>
                     {/* <button onClick={handleLike} className="button btn btn-dark btn-sm">Like</button> */}
                     {/* <button onClick={handleDelete} className="button btn btn-dark btn-sm">Delete</button> */}
-                    <Button onClick={handleDelete} size="small" className="button">delete</Button>
-                    <p>Number of likes: {props.picture.likes}</p>
+                    <Button onClick={handleDelete} size="small" className="item-info button">delete</Button>
+                    <span className="item-info">{props.picture.likes} likes</span>
+                </div>
             </div>
         </>
     )

@@ -1,5 +1,6 @@
 .itemBox{
-    width: 200px;
+    width: 250px;
+    height: 250px;
     padding: 10px;
     display: inline-block;
     text-align: center;
@@ -8,11 +9,16 @@
 }
 
 .imgBox{
-    width: 200px;
+    width: 250px;
     height: auto;
     text-align: center;
     padding: 10px;
     border: 1px solid black;
+}
+
+.description{
+    object-fit: cover;
+    display: inline;
 }
 
 .button{
@@ -23,3 +29,12 @@
 .galleryImage{
     object-fit: cover;
 }
+
+/* .button-div{
+    width: 100%;
+    text-align: center;
+}
+
+.item-info{
+    display: inline-block;
+} */
