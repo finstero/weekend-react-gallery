@@ -4,8 +4,10 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
+import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
+// import IconButton from '@material-ui/core/IconButton';
+// import DeleteIcon from '@material-ui/icons/Delete';
 
 function GalleryForm(props) {
 
@@ -52,12 +54,15 @@ function GalleryForm(props) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="urlInput">Image URL</label>
-                <input onChange={(event) => setPicturePath(event.target.value)} value={picturePath} id="urlInput" class="input btn btn-outline-dark btn-sm" placeholder="image url" />
-                <label htmlFor="descriptionInput">Image Description</label>
-                <input onChange={(event) => setPictureDescription(event.target.value)} value={pictureDescription} id="descriptionInput" class="input btn btn-outline-dark btn-sm" placeholder="description" />
+                <label htmlFor="urlInput"></label>
+                <Input onChange={(event) => setPicturePath(event.target.value)} value={picturePath} id="urlInput" placeholder="image url" color="secondary" className="input" />
+                {/* <input onChange={(event) => setPicturePath(event.target.value)} value={picturePath} id="urlInput" class="input btn btn-outline-dark btn-sm" placeholder="image url" /> */}
+                <label htmlFor="descriptionInput"></label>
+                {/* <TextField onChange={(event) => setPictureDescription(event.target.value)} value={pictureDescription} id="descriptionInput" label="image description" color="secondary"/> */}
+                <Input onChange={(event) => setPictureDescription(event.target.value)} value={pictureDescription} id="descriptionInput" placeholder="image description" color="secondary" className="input" />
+                {/* <input onChange={(event) => setPictureDescription(event.target.value)} value={pictureDescription} id="descriptionInput" class="input btn btn-outline-dark btn-sm" placeholder="description" /> */}
                 {/* <button className="btn btn-dark btn-sm" type="submit" >Display</button> */}
-                <Button size="small" color="default" type="submit" disableElevation>Display</Button>
+                <Button color="default" type="submit" disableElevation>Display</Button>
                     {/* <IconButton aria-label="delete"><DeleteIcon /></IconButton> */}
             </form>
         </div>
